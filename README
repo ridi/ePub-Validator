@@ -1,0 +1,35 @@
+README
+
+* Sublime Text 2, Package Control 활성화하기
+	- View > Show Console
+	- 콘솔창에 아래 명령 복붙 후 실행
+import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
+	- Sublime Text 2 재시작
+	- cmd + shift + P
+	- 입력창에 'install' 입력
+	- 'Package Control: Install Package' 선택(실행)
+
+* Sublime Text 2, JS & NodeJS Snippets Package 설치하기
+	- 입력창에 'install' 입력
+	- 'Package Control: Install Package' 선택(실행)
+	- 입력창에 'nodejs' 입력
+	- 'Java​Script & Node​JS Snippets' 선택(설치)
+
+* Sublime Text 2, Javascript Completions Package 설치하기
+	- 입력창에 'install' 입력
+	- 'Package Control: Install Package' 선택(실행)
+	- 입력창에 'javascript' 입력
+	- 'Javascript Completions' 선택(설치)
+
+* Sublime Text 2에 NodeJS 빌드 시스템 추가하기
+	- Tools > Build System > New Build System 선택
+	- 아래 내용 복붙
+{   
+  "cmd": ["/usr/local/bin/node", "$file"],   
+  "selector": "source.js"   
+}
+	- 아래 경로로 저장
+'/Users/{사용자 이름}/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/nodejs.sublime-build'
+	- 빌드할 main.js를 Sublime Text 2로 열기 또는 선택
+	- Sublime Text 2 > Tools > Build System > nodejs 선택
+	- cmd + B
