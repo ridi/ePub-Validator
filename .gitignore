@@ -16,3 +16,6 @@ node_modules/*
 ######################
 *.log
 
+# Temp file          #
+######################
+epub-validator-temp/*
