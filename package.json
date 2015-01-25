@@ -22,7 +22,8 @@
     "css": "~2.1.0",
     "image-size": "~0.3.5",
     "rimraf": "~2.2.8",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "wrench": "~1.5.8"
   },
   "files": [
     "./README",
