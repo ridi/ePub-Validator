@@ -1,40 +1,75 @@
 // Ridibooks-Checker 0.0.1
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
-var pkg = require(path.join(__dirname, 'package.json'));
-var program = require('commander');
+var ps    = process,
+    fs    = require('fs'),
+    path  = require('path'),
+    uuid  = require('node-uuid'),
+    pkg   = require(path.join(__dirname, 'package.json')),
+    cmd   = require('commander'),
+    rimraf= require('rimraf'),
+    Zip   = require('adm-zip'),
+    Epub  = require('./lib/EPubValidator'),
+    File  = require('./lib/FileValidator'),
+    debug = require('debug')('app');
 
-program.version(pkg.version)
-			.usage('<file>')
-    	.parse(process.argv);
+cmd.version(pkg.version)
+   .usage('<file>')
+   .parse(ps.argv);
 
-var targetPath = program.args[0];
-if (targetPath === undefined) {
-	process.exit(1);	// 인자 없음
+var temp = 'epub-validator-temp';
+var unzipPath = path.join(temp, uuid.v1());
+var exit = function(code) {
+  try {
+    rimraf.sync(unzipPath);
+  } catch(e) {}
+  if (code)
+    debug('stop (' + code + ')');
+  else
+    debug('finis (0)');
+  ps.exit(code);
+};
+
+debug('init');
+
+var file = cmd.args[0];
+if (file === undefined) {
+  exit(1);
 }
 
-if (fs.existsSync(targetPath) === false) {
-	process.exit(2);	// 대상 파일을 찾을 수 없음
+debug('check args');
+
+if (fs.existsSync(file) === false) {
+	exit(2);
 }
 
-var epub = require('./lib/EPubChecker');
-// epub.
+debug('check exists file');
 
-var uuid = require('node-uuid');
-var AdmZip = require('adm-zip');
-var unzipPath = path.join('epub-validator-temp', uuid.v1());
-var zip = new AdmZip(targetPath);
 try {
+  var epub = new Epub(file);
+  epub.validation();
+} catch(e) {
+  exit(3);
+}
+
+debug('ePub validation');
+
+try {
+  var zip = new Zip(file);
 	zip.extractAllTo(unzipPath, true);
 } catch(e) {
-	process.exit(3);	// zip 파일이 아니거나 압축파일이 손상 됐음
+	exit(4);
 }
 
-var file = require('./lib/FileChecker');
-// file.
+debug('ePub uncompressed');
 
-// fs.rmdirSync(unzipPath);
+try {
+  var files = new File(file);
+  files.validation();
+} catch(e) {
+  exit(5);
+}
 
-process.exit(0);		// 완료
+debug('files validation in ePub');
+
+exit(0);

@@ -13,13 +13,15 @@
     "node": ">=0.8.5"
   },
   "devDependencies": {
+    "debug": "~2.1.1",
     "commander": "~2.6.0",
     "adm-zip": "~0.4.4",
     "node-uuid": "~1.4.2",
     "epubcheck": "~0.1.3",
     "w3c-css": "~0.3.2",
     "css": "~2.1.0",
-    "image-size": "~0.3.5"
+    "image-size": "~0.3.5",
+    "rimraf": "~2.2.8"
   },
   "files": [
     "./README",
