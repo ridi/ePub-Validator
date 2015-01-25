@@ -64,7 +64,7 @@ try {
 debug('ePub uncompressed');
 
 try {
-  var files = new File(file);
+  var files = new File(unzipPath);
   files.validation();
 } catch(e) {
   exit(5);
