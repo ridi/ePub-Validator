@@ -26,7 +26,7 @@ var exit = function(code) {
   if (code)
     debug('stop (' + code + ')');
   else
-    debug('finis (0)');
+    debug('finish (0)');
   ps.exit(code);
 };
 
