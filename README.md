@@ -56,15 +56,14 @@
 - 디버깅 모드로 실행시키기 위해서는 아래 처럼 커맨드를 사용할 때  
 `davin$ node epub-validator.js test.epub`
 - 커맨드 앞에 'DEBUG=__keyword__'를 붙여주면 된다  
-`DEBUG=* davin$ node epub-validator.js test.epub`
+`davin$ DEBUG=* node epub-validator.js test.epub`
 - __keyword__에는 __app__, __epub__, __file__, __html__, __css__, __image__가 있으며 전체를 쓰고 싶을 때는 __*__를 사용한다  
 - 예를 들어 __app__을 keyword로 사용하면 아래와 같이 출력된다  
-```
-app init +0ms  
-app check args +2ms  
-app check exists file +1ms  
-app ePub validation +0ms  
-app ePub uncompressed +614ms  
-app files validation in ePub +0ms  
-app finish (0) +13ms  
-```
+
+	app init +0ms  
+	app check args +2ms  
+	app check exists file +1ms  
+	app ePub validation +0ms  
+	app ePub uncompressed +614ms  
+	app files validation in ePub +0ms  
+	app finish (0) +13ms  
