@@ -8,6 +8,10 @@
     "Daeyeol Ryu <dy.ryu@ridicorp.com>"
   ],
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.ridi.kr:8888/app/epub-validator.git"
+  },
   "main": "epub-validator.js",
   "engines": {
     "node": ">=0.8.5"
