@@ -2,6 +2,7 @@
 'use strict';
 
 var ps    = process,
+    log   = require('./lib/Log'),
     fs    = require('fs'),
     path  = require('path'),
     uuid  = require('node-uuid'),
@@ -23,10 +24,13 @@ var exit = function(code) {
   try {
     rimraf.sync(unzipPath);
   } catch(e) {}
-  if (code)
+  if (code) {
     debug('stop (' + code + ')');
-  else
+    log.info('검사 중단: %s', file);
+  } else {
     debug('finish (0)');
+    log.info('검사 완료: %s', file);
+  }
   ps.exit(code);
 };
 
@@ -40,8 +44,10 @@ if (file === undefined) {
 debug('check args');
 
 if (fs.existsSync(file) === false) {
-	exit(2);
+  exit(2);
 }
+
+log.info('검사 시작: %s', file);
 
 debug('check exists file');
 
@@ -49,6 +55,7 @@ try {
   var epub = new Epub(file);
   epub.validation();
 } catch(e) {
+  log.fatal(e);
   exit(3);
 }
 
@@ -56,9 +63,10 @@ debug('ePub validation');
 
 try {
   var zip = new Zip(file);
-	zip.extractAllTo(unzipPath, true);
+  zip.extractAllTo(unzipPath, true);
 } catch(e) {
-	exit(4);
+  log.fatal(e);
+  exit(4);
 }
 
 debug('ePub uncompressed');
@@ -67,6 +75,7 @@ try {
   var files = new File(unzipPath);
   files.validation();
 } catch(e) {
+  log.fatal(e);
   exit(5);
 }
 
