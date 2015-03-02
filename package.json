@@ -28,8 +28,9 @@
     "underscore": "~1.7.0",
     "wrench": "~1.5.8",
     "is-utf8": "~0.2.0",
-    "isbn-validator": "~1.0.0",
-    "shelljs": "~0.3.0"
+    "shelljs": "~0.3.0",
+    "xml2js": "~0.4.5",
+    "node-isbn": "~1.0.0"
   },
   "files": [
     "./README",

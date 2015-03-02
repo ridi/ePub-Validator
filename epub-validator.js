@@ -52,24 +52,24 @@ log.info('검사 시작: %s', file);
 debug('check exists file');
 
 try {
-  var epub = new Epub(file);
-  epub.validation();
+  var zip = new Zip(file);
+  zip.extractAllTo(unzipPath, true);
 } catch(e) {
   log.fatal(e);
   exit(3);
 }
 
-debug('ePub validation');
+debug('ePub uncompressed');
 
 try {
-  var zip = new Zip(file);
-  zip.extractAllTo(unzipPath, true);
+  var epub = new Epub(file, unzipPath);
+  epub.validation();
 } catch(e) {
   log.fatal(e);
   exit(4);
 }
 
-debug('ePub uncompressed');
+debug('ePub validation');
 
 try {
   var files = new File(unzipPath);
