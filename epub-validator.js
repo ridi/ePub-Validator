@@ -3,6 +3,7 @@
 
 var ps    = process,
     log   = require('./lib/Log'),
+    report= require('./lib/Report'),
     fs    = require('fs'),
     path  = require('path'),
     uuid  = require('node-uuid'),
@@ -80,5 +81,7 @@ try {
 }
 
 debug('files validation in ePub');
+
+report.print()
 
 exit(0);

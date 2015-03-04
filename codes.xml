@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<codes>
+  <code>
+    <id>EPUB-001</id>
+    <level>경고</level>
+    <message>epubCheck: %s (%s)</message>
+  </code>
+  <code>
+    <id>EPUB-002</id>
+    <level>경고</level>
+    <message>ISBN 정보가 누락되어 있습니다.</message>
+  </code>
+  <code>
+    <id>EPUB-003</id>
+    <level>경고</level>
+    <message>ISBN이 올바르지 않습니다. (%s)</message>
+    <suggestion>ISBN 버전에 맞는 형식을 갖췄는지 확인해주세요.</suggestion>
+  </code>
+  <code>
+    <id>EPUB-004</id>
+    <level>오류</level>
+    <message>목차의 경로(content src)가 './'로 시작합니다.</message>
+    <description>Ridibooks for iOS v5.8.0 미만에서 해당 목차로 이동할 수 없습니다.</description>
+    <suggestion>경로에서 './'를 제거해주세요.</suggestion>
+  </code>
+  <code>
+    <id>FILE-001</id>
+    <level>오류</level>
+    <message>UTF-8에서 지원하지 않는 문자가 파일명에 포함되어 있습니다.</message>
+    <description>뷰어에서 해당 파일을 읽을 수가 없습니다.</description>
+    <suggestion>파일명과 OPF의 manifest에 입력된 경로를 수정해주세요.</suggestion>
+  </code>
+  <code>
+    <id>IMG-001</id>
+    <level>오류</level>
+    <message>표지 이미지가 %dx%d보다 작습니다.</message>
+    <suggestion>표지 이미지의 권장 크기 %dx%d로 맞춰주세요.</suggestion>
+  </code>
+  <code>
+    <id>IMG-002</id>
+    <level>오류</level>
+    <message>본문 이미지가 %dx%d보다 큽니다.</message>
+  </code>
+  <code>
+    <id>IMG-003</id>
+    <level>오류</level>
+    <message>이미지 파일의 크기가 %dMB보다 큽니다.</message>
+    <description>저사양 기기에서 책을 열 수 없거나 화면에 출력할 수 없습니다.</description>
+    <suggestion>파일 크기를 %dMB 이하로 맞춰주세요.</suggestion>
+  </code>
+  <code>
+    <id>IMG-004</id>
+    <level>오류</level>
+    <message>CMYK 모드를 사용하는 이미지입니다.</message>
+    <description>Android 기기에서 출력할 수 없습니다.</description>
+    <suggestion>RGB 모드로 수정해주세요.</suggestion>
+  </code>
+  <code>
+    <id>HTML-001</id>
+    <level>오류</level>
+    <message>HTML 파일의 크기가 %dKB보다 큽니다.</message>
+    <description>뷰어에서 책을 여는데 오랜 시간이 걸립니다.</description>
+    <suggestion>HTML의 권장 크기 %dKB 이하로 맞춰주세요.</suggestion>
+  </code>
+</codes>
