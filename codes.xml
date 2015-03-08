@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <codes>
   <code>
+    <id>APP-001</id>
+    <level>심각</level>
+    <message>검사할 대상을 파라미터로 입력해주세요.</message>
+  </code>
+  <code>
+    <id>APP-002</id>
+    <level>심각</level>
+    <message>검사할 대상 %s(을)를 찾을 수 없습니다.</message>
+  </code>
+  <code>
+    <id>APP-003</id>
+    <level>안내</level>
+    <message>검사 시작: %s</message>
+  </code>
+  <code>
+    <id>APP-004</id>
+    <level>안내</level>
+    <message>검사 중지: %s</message>
+  </code>
+  <code>
+    <id>APP-005</id>
+    <level>안내</level>
+    <message>검사 완료: %s</message>
+  </code>
+  <code>
+    <id>APP-006</id>
+    <level>심각</level>
+    <message>검사할 대상 %s(을)를 압축해제할 수 없습니다.</message>
+    <suggestion>검사할 대상이 epub 파일인지 확인해주세요.</suggestion>
+  </code>
+  <code>
     <id>EPUB-001</id>
     <level>경고</level>
     <message>epubCheck: %s (%s)</message>

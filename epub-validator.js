@@ -15,40 +15,41 @@ var ps    = process,
     File  = require('./lib/FileValidator'),
     debug = require('debug')('app');
 
-cmd.version(pkg.version)
-   .usage('<file>')
-   .parse(ps.argv);
-
 var temp = 'epub-validator-temp';
 var unzipPath = path.join(temp, uuid.v1());
+
 var exit = function(code) {
   try {
     rimraf.sync(unzipPath);
   } catch(e) {}
-  if (code) {
-    debug('stop (' + code + ')');
-    log.info('검사 중단: %s', file);
-  } else {
-    debug('finish (0)');
-    log.info('검사 완료: %s', file);
-  }
+  
+  report.add(code ? 'APP-004' : 'APP-005', null, [file]);
+  report.print();
+
+  debug('exit');
   ps.exit(code);
 };
+
+cmd.version(pkg.version)
+   .usage('<file>')
+   .parse(ps.argv);
 
 debug('init');
 
 var file = cmd.args[0];
 if (file === undefined) {
+  report.add('APP-001');
   exit(1);
 }
 
 debug('check args');
 
 if (fs.existsSync(file) === false) {
+  report.add('APP-002', null, [file]);
   exit(2);
 }
 
-log.info('검사 시작: %s', file);
+report.add('APP-003', null, [file]);
 
 debug('check exists file');
 
@@ -56,7 +57,7 @@ try {
   var zip = new Zip(file);
   zip.extractAllTo(unzipPath, true);
 } catch(e) {
-  log.fatal(e);
+  report.add('APP-006', null, [file]);
   exit(3);
 }
 
@@ -66,7 +67,7 @@ try {
   var epub = new Epub(file, unzipPath);
   epub.validation();
 } catch(e) {
-  log.fatal(e);
+  report.add(e.code, e.location, e.msgArgs, e.descArgs, e.sugArgs);
   exit(4);
 }
 
@@ -76,12 +77,10 @@ try {
   var files = new File(unzipPath);
   files.validation();
 } catch(e) {
-  log.fatal(e);
+  report.add(e.code, e.location, e.msgArgs, e.descArgs, e.sugArgs);
   exit(5);
 }
 
 debug('files validation in ePub');
-
-report.print()
 
 exit(0);
