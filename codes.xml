@@ -49,6 +49,17 @@
   </code>
   <code>
     <id>EPUB-004</id>
+    <level>심각</level>
+    <message>NCX 파일을 찾을 수 없습니다.</message>
+    <description>OPF에 NCX의 경로가 없거나, 잘못 명시되어 있습니다.</description>
+  </code>
+  <code>
+    <id>EPUB-005</id>
+    <level>심각</level>
+    <message>NCX 파일을 읽을 수 없습니다.</message>
+  </code>
+  <code>
+    <id>EPUB-006</id>
     <level>오류</level>
     <message>목차의 경로(content src)가 './'로 시작합니다.</message>
     <description>Ridibooks for iOS v5.8.0 미만에서 해당 목차로 이동할 수 없습니다.</description>
