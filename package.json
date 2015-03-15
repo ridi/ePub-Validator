@@ -32,7 +32,8 @@
     "xml2js": "~0.4.5",
     "validator": "~3.33.0",
     "string-hash": "~1.1.0",
-    "sprintf": "~0.1.5"
+    "sprintf": "~0.1.5",
+    "htmlparser2": "~3.8.2"
   },
   "files": [
     "./README",
