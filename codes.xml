@@ -141,4 +141,17 @@
     <description>뷰어에서 책을 여는데 오랜 시간이 걸립니다.</description>
     <suggestion>HTML의 권장 크기 %dKB 이하로 맞춰주세요.</suggestion>
   </code>
+  <code>
+    <id>HTML-302</id>
+    <level>오류</level>
+    <message>HTML 태그가 너무 많은 자식 태그를 가지고 있습니다.</message>
+    <description>뷰어에서 책을 여는데 오랜 시간이 걸리고, 선택과 형광펜 기능이 느려집니다.</description>
+    <suggestion>여러 부모를 만들어서 자식을 분산시켜주세요.</suggestion>
+  </code>
+  <code>
+    <id>HTML-401</id>
+    <level>심각</level>
+    <message>body 태그를 찾을 수 없습니다.</message>
+    <description>Ridibooks for PC v1.0.1 미만에서 해당 도서를 열 수 없습니다.</description>
+  </code>
 </codes>
