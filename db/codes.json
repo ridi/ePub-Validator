@@ -1,0 +1,174 @@
+// codes.json
+//
+// 프로그램 오류나 검사 결과에 대한 메시지를 설정할 수 있다
+//
+// 형식:
+//   id: 코드에 부여된 아이디
+//      [location]-[number]
+//      location: 코드가 소속된 위치로 명령의 메인인 app이나 validator의 이름을 사용
+//      number: 코드를 식별하기 위해 세 자리 숫자로 구성, 첫 자리는 심각성을 나타냄
+//   level: 코드의 심각성
+//      정보 = 0, 안내 = 1, 경고 = 2, 오류 = 3, 심각 = 4
+//   message: 코드 내용
+//   description: message에 대한 자세한 설명 및 참고
+//   suggestion: 코드를 처리하기 위한 제안
+//
+[
+// 프로그램 관련
+  {
+    "id": "APP-101",
+    "level": "안내",
+    "message": "검사 시작: %s"
+  },
+  {
+    "id": "APP-102",
+    "level": "안내",
+    "message": "검사 중지: %s"
+  },
+  {
+    "id": "APP-103",
+    "level": "안내",
+    "message": "검사 완료: %s"
+  },
+  {
+    "id": "APP-301",
+    "level": "오류",
+    "message": "임시 폴더 %s(을)를 삭제할 수 없습니다."
+  },
+  {
+    "id": "APP-401",
+    "level": "심각",
+    "message": "검사할 대상을 파라미터로 입력해주세요."
+  },
+  {
+    "id": "APP-402",
+    "level": "심각",
+    "message": "검사할 대상 %s(을)를 찾을 수 없습니다."
+  },
+  {
+    "id": "APP-403",
+    "level": "심각",
+    "message": "검사할 대상 %s(을)를 압축해제할 수 없습니다.",
+    "description": "검사할 대상이 epub 파일인지 확인해주세요."
+  },
+// epubcheck 관련(번역 안 된 애들이 여기에 해당)
+  {
+    "id": "EPUB-000",
+    "level": "미분류",
+    "message": "epubCheck: %s (%s)"
+  },
+// epub 관련
+  {
+    "id": "EPUB-001",
+    "level": "정보",
+    "message": "도서 제목: %s"
+  },
+  {
+    "id": "EPUB-002",
+    "level": "정보",
+    "message": "저자: %s"
+  },
+  {
+    "id": "EPUB-003",
+    "level": "정보",
+    "message": "출판: %s"
+  },
+  {
+    "id": "EPUB-201",
+    "level": "경고",
+    "message": "ISBN 정보가 누락되어 있습니다."
+  },
+  {
+    "id": "EPUB-202",
+    "level": "경고",
+    "message": "ISBN이 올바르지 않습니다. (%s)",
+    "description": "ISBN 버전에 맞는 형식을 갖췄는지 확인해주세요."
+  },
+  {
+    "id": "EPUB-301",
+    "level": "오류",
+    "message": "목차의 경로(content src)가 './'로 시작합니다.",
+    "description": "Ridibooks for iOS v5.8.0 미만에서 해당 목차로 이동할 수 없습니다. (Android/PC는 무관)",
+    "suggestion": "경로에서 './'를 제거해주세요."
+  },
+  {
+    "id": "EPUB-401",
+    "level": "심각",
+    "message": "도서의 메타데이터를 찾을 수 없습니다.",
+    "description": "ID, 도서 제목, 저자, 출판 등의 메타데이터가 OPF에 명시되어 있지 않습니다."
+  },
+  {
+    "id": "EPUB-402",
+    "level": "심각",
+    "message": "NCX 파일을 찾을 수 없습니다.",
+    "description": "OPF에 NCX의 경로가 없거나, 잘못 명시되어 있습니다."
+  },
+  {
+    "id": "EPUB-403",
+    "level": "심각",
+    "message": "NCX 파일을 읽을 수 없습니다.",
+    "description": "NCX 파일이 손상되었거나 UTF-8 인코딩이 아닙니다."
+  },
+// 파일 관련
+  {
+    "id": "FILE-301",
+    "level": "오류",
+    "message": "UTF-8 또는 UTF-16에서 지원하지 않는 문자가 파일명에 포함되어 있습니다.",
+    "description": "뷰어에서 해당 파일을 읽을 수가 없습니다.",
+    "suggestion": "파일명과 OPF의 manifest에 입력된 경로를 수정해주세요."
+  },
+// 이미지 관련
+  {
+    "id": "IMG-301",
+    "level": "오류",
+    "message": "표지 이미지가 %dx%d보다 작습니다.",
+    "description": "표지 이미지의 권장 크기 %dx%d로 맞춰주세요."
+  },
+  {
+    "id": "IMG-302",
+    "level": "오류",
+    "message": "본문 이미지가 %dx%d보다 큽니다."
+  },
+  {
+    "id": "IMG-303",
+    "level": "오류",
+    "message": "이미지 파일의 크기가 %dMB보다 큽니다.",
+    "description": "저사양 기기에서 책을 열 수 없거나 화면에 출력할 수 없습니다.",
+    "suggestion": "파일 크기를 %dMB 이하로 맞춰주세요."
+  },
+  {
+    "id": "IMG-304",
+    "level": "오류",
+    "message": "CMYK Color model을 사용하는 이미지입니다.",
+    "description": "Android 기기에서 출력할 수 없습니다.",
+    "suggestion": "RGB Color model로 수정해주세요."
+  },
+// 본뮨 관련
+  {
+    "id": "HTML-301",
+    "level": "오류",
+    "message": "HTML 파일의 크기가 %dKB보다 큽니다.",
+    "description": "뷰어에서 책을 여는데 오랜 시간이 걸립니다.",
+    "suggestion": "HTML의 권장 크기 %dKB 이하로 맞춰주세요."
+  },
+  {
+    "id": "HTML-302",
+    "level": "오류",
+    "message": "HTML 태그가 너무 많은 자식 태그를 가지고 있습니다.",
+    "description": "뷰어에서 책을 여는데 오랜 시간이 걸리고, 선택과 형광펜 기능이 느려집니다.",
+    "suggestion": "여러 부모를 만들어서 자식을 분산시켜주세요."
+  },
+  {
+    "id": "HTML-303",
+    "level": "오류",
+    "message": "body 태그에 'background-color' 속성이 들어가 있습니다.",
+    "description": "뷰어 테마 설정이 무시될 수 있습니다.",
+    "suggestion": "body 태그의 자식에게 'background-color'를 사용해주세요."
+  },
+  {
+    "id": "HTML-401",
+    "level": "심각",
+    "message": "body 태그를 찾을 수 없습니다.",
+    "description": "Ridibooks for PC v1.0.1 미만에서 해당 도서를 열 수 없습니다. (iOS/Android는 무관)"
+  }
+]
