@@ -1,0 +1,27 @@
+[
+  { "name": "sample",
+    "os": {
+      "android": "4.0",
+      "ios": "7.0"
+    },
+    "ridibooks": {
+      "android": "7.1",
+      "ios": "6.32"
+    }
+  },
+  { "name": "svg",
+    "os": {
+      "android": "4.0"
+    }
+  },
+  { "name": "image",
+    "os": {
+      "android": "4.0"
+    }
+  },
+  { "name": "video",
+    "ridibooks": {
+      "android": "n/a"
+    }
+  }
+]
