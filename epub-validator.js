@@ -2,44 +2,43 @@
 'use strict';
 
 var ps       = process,
-    log      = require('./lib/Log'),
-    report   = require('./lib/Report'),
-    fs       = require('fs'),
     path     = require('path'),
     uuid     = require('node-uuid'),
+    tmpDir   = path.join(__dirname, 'epub-validator-temp'),
+    unzDir   = path.join(tmpDir, uuid.v1()),
     pkg      = require(path.join(__dirname, 'package.json')),
+    fs       = require('fs'),
+    jxm      = require('jxm'),
     cmd      = require('commander'),
     rimraf   = require('rimraf'), /*폴더 삭제용*/
     Zip      = require('adm-zip'),
+    humanize = require('ms'),
+    debug    = require('debug')('app'),
+    report   = require('./lib/Report'),
     Epub     = require('./lib/EPubValidator'),
     File     = require('./lib/FileValidator'),
-    config   = require('./lib/Config'),
-    humanize = require('ms'),
-    debug    = require('debug')('app');
-
-var temp = 'epub-validator-temp';
-var unzipPath = path.join(temp, uuid.v1());
-
-var startTime = new Date();
+    config   = require('./lib/Config');
 
 var exit = function(/*Number*/code, /*Object*/e) {
   if (e !== undefined) {
     if (e.code === undefined) {
-      console.log(e);
+      throw e;
     } else {
       report.add(e.code, e.location, e.msgArgs, e.descArgs, e.sugArgs);
     }
   }
 
   try {
-    rimraf.sync(unzipPath);
+    rimraf.sync(unzDir);
   } catch(e) {
-    report.add('APP-201'/*임시 폴더 삭제 오류*/, null, [unzipPath]);
-    console.log(e);
+    report.add('APP-201'/*임시 폴더 삭제 오류*/, null, [unzDir]);
   }
 
   var finishTime = new Date();
   var ms = finishTime - startTime;
+  if (isNaN(ms)) {
+    ms = 0;
+  }
 
   report.add(code ? 'APP-102'/*검사 중지*/ : 'APP-103'/*검사 완료*/, null, [file || '', humanize(ms)]);
 
@@ -49,10 +48,16 @@ var exit = function(/*Number*/code, /*Object*/e) {
   ps.exit(code);
 };
 
+// 배포용으로 실행되면 첫 번째 인자에 'node'가 없어서 cmd가 비정상으로 동작하게 된다
+var argv = ps.argv;
+if (argv.length > 0 && argv[0] !== 'node') {
+  argv.splice(0, 0, 'node');
+}
+
 // TODO: 추후 옵션을 추가하거나 사용법을 구체적으로 추가해보자
 cmd.version(pkg.name + ' v' + pkg.version)
    .usage('<file>')
-   .parse(ps.argv);
+   .parse(argv);
 
 debug('init');
 
@@ -69,13 +74,14 @@ if (fs.existsSync(file) === false) {
   exit(2);
 }
 
-report.add('APP-101'/*검사 시작*/, null, [file]);
-
 debug('check exists file');
+
+var startTime = new Date();
+report.add('APP-101'/*검사 시작*/, null, [file]);
 
 try {
   var zip = new Zip(file);
-  zip.extractAllTo(unzipPath, true);
+  zip.extractAllTo(unzDir, true);
 } catch(e) {
   report.add('APP-403'/*압축해제 오류*/, null, [file]);
   exit(3, e);
@@ -84,7 +90,7 @@ try {
 debug('ePub uncompressed');
 
 try {
-  var epub = new Epub(file, unzipPath);
+  var epub = new Epub(file, unzDir);
   epub.validation();
 } catch(e) {
   exit(4, e);
@@ -93,7 +99,8 @@ try {
 debug('ePub validation');
 
 try {
-  var files = new File(unzipPath);
+  console.log(unzDir);
+  var files = new File(unzDir);
   files.validation();
 } catch(e) {
   exit(5, e);

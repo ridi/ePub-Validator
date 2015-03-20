@@ -1,0 +1,30 @@
+{
+	"name": "epub-validator",
+	"version": "0.0.1",
+	"author": "Ridibooks App Team",
+	"description": "ePub validator for Ridibooks CP site",
+	"company": "© RIDI Corporation",
+	"website": "",
+	"package": null,
+	"startup": "epub-validator.js",
+	"execute": null,
+	"extract": true,
+	"output": "epub-validator.jx",
+	"files": [
+		"epub-validator.js",
+		"lib/Report.js",
+		"lib/Config.js",
+		"lib/Validator.js",
+		"lib/EPubValidator.js",
+		"lib/FileValidator.js",
+		"lib/ImageValidator.js",
+		"lib/HtmlValidator.js",
+		"lib/CssValidator.js",
+		"package.json"
+	],
+	"preInstall": null,
+	"library": true,
+	"readme_file": "README.md",
+	"fs_reach_sources": true,
+	"native": true
+}
