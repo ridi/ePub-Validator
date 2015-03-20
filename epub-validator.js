@@ -26,7 +26,7 @@ var exit = function(/*Number*/code) {
   try {
     rimraf.sync(unzipPath);
   } catch(e) {
-    report.add('APP-301'/*임시 폴더 삭제 오류*/, null, [unzipPath]);
+    report.add('APP-201'/*임시 폴더 삭제 오류*/, null, [unzipPath]);
     debug(e);
   }
 

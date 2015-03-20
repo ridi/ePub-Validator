@@ -21,7 +21,6 @@
     "commander": "~2.6.0",
     "adm-zip": "~0.4.4",
     "node-uuid": "~1.4.2",
-    "w3c-css": "~0.3.2",
     "css": "~2.1.0",
     "image-size": "~0.3.5",
     "rimraf": "~2.2.8",

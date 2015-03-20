@@ -1,0 +1,12 @@
+[
+  { "name": "page-break-after",
+    "os": {
+      "android": "4.0"
+    }
+  },
+  { "name": "page-break-before",
+    "os": {
+      "android": "4.0"
+    }
+  }
+]
