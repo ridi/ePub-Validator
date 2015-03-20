@@ -1,23 +1,26 @@
 // Ridibooks-Checker 0.0.1
 'use strict';
 
-var ps    = process,
-    log   = require('./lib/Log'),
-    report= require('./lib/Report'),
-    fs    = require('fs'),
-    path  = require('path'),
-    uuid  = require('node-uuid'),
-    pkg   = require(path.join(__dirname, 'package.json')),
-    cmd   = require('commander'),
-    rimraf= require('rimraf'), /*폴더 삭제용*/
-    Zip   = require('adm-zip'),
-    Epub  = require('./lib/EPubValidator'),
-    File  = require('./lib/FileValidator'),
-    config= require('./lib/Config'),
-    debug = require('debug')('app');
+var ps       = process,
+    log      = require('./lib/Log'),
+    report   = require('./lib/Report'),
+    fs       = require('fs'),
+    path     = require('path'),
+    uuid     = require('node-uuid'),
+    pkg      = require(path.join(__dirname, 'package.json')),
+    cmd      = require('commander'),
+    rimraf   = require('rimraf'), /*폴더 삭제용*/
+    Zip      = require('adm-zip'),
+    Epub     = require('./lib/EPubValidator'),
+    File     = require('./lib/FileValidator'),
+    config   = require('./lib/Config'),
+    humanize = require('ms'),
+    debug    = require('debug')('app');
 
 var temp = 'epub-validator-temp';
 var unzipPath = path.join(temp, uuid.v1());
+
+var startTime = new Date();
 
 var exit = function(/*Number*/code) {
   try {
@@ -27,8 +30,11 @@ var exit = function(/*Number*/code) {
     debug(e);
   }
 
-  report.add(code ? 'APP-102'/*검사 중지*/ : 'APP-103'/*검사 완료*/, null, [file]);
-  
+  var finishTime = new Date();
+  var ms = finishTime - startTime;
+
+  report.add(code ? 'APP-102'/*검사 중지*/ : 'APP-103'/*검사 완료*/, null, [file, humanize(ms)]);
+
   report.print();
 
   debug('exit');

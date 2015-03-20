@@ -34,7 +34,8 @@
     "string-hash": "~1.1.0",
     "sprintf": "~0.1.5",
     "htmlparser2": "~3.8.2",
-    "cheerio": "~0.18.0"
+    "cheerio": "~0.18.0",
+    "ms": "~0.7.0"
   },
   "files": [
     "./README",
