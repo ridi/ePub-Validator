@@ -33,7 +33,7 @@ var exit = function(/*Number*/code) {
   var finishTime = new Date();
   var ms = finishTime - startTime;
 
-  report.add(code ? 'APP-102'/*검사 중지*/ : 'APP-103'/*검사 완료*/, null, [file, humanize(ms)]);
+  report.add(code ? 'APP-102'/*검사 중지*/ : 'APP-103'/*검사 완료*/, null, [file || '', humanize(ms)]);
 
   report.print();
 
@@ -42,7 +42,7 @@ var exit = function(/*Number*/code) {
 };
 
 // TODO: 추후 옵션을 추가하거나 사용법을 구체적으로 추가해보자
-cmd.version(pkg.version)
+cmd.version(pkg.name + ' v' + pkg.version)
    .usage('<file>')
    .parse(ps.argv);
 
