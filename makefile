@@ -1,6 +1,10 @@
-all: clean build package finish
+all: clean build package
 
 clean:
+	find . -name '*.DS_Store' -type f -delete
+	find . -name '*.Trashes' -type f -delete
+	find . -name '*ehthumbs.db' -type f -delete
+	find . -name '*Thumbs.db' -type f -delete
 	rm -rf release
 
 build:
@@ -13,13 +17,9 @@ package:
 	cp -r db release
 	cp -r lib/epubcheck release/lib
 
-finish:
-	find release -name '*.DS_Store' -type f -delete
-	find release -name '*.Trashes' -type f -delete
-	find release -name '*ehthumbs.db' -type f -delete
-	find release -name '*Thumbs.db' -type f -delete
+cleaninstall: pre-cleaninstall install
 
-cleaninstall: clean install
+pre-cleaninstall: clean
 	rm -rf node_modules
 	rm -rf epub-validator-temp
 	rm -rf temp
