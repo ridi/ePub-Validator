@@ -23,11 +23,12 @@ var exit = function(/*Number*/code) {
   try {
     rimraf.sync(unzipPath);
   } catch(e) {
-    report.add('APP-301', null, [unzipPath]);
+    report.add('APP-301'/*임시 폴더 삭제 오류*/, null, [unzipPath]);
     debug(e);
   }
 
   report.add(code ? 'APP-102'/*검사 중지*/ : 'APP-103'/*검사 완료*/, null, [file]);
+  
   report.print();
 
   debug('exit');
