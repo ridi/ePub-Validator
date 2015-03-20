@@ -68,12 +68,6 @@
     "message": "검사할 대상 %s(을)를 압축해제할 수 없습니다.",
     "description": "검사할 대상이 epub 파일인지 확인해주세요."
   },
-// epubcheck 관련(번역 안 된 애들이 여기에 해당)
-  {
-    "id": "EPUB-000",
-    "level": "미분류",
-    "message": "epubCheck: %s (%s)"
-  },
 // epub 관련
   {
     "id": "EPUB-001",
@@ -166,11 +160,11 @@
     "level": "경고",
     "message": "%s 태그는 %s 환경부터 지원합니다.",
     "description": "해당 태그가 정상적으로 동작하지 않을 수 있습니다."
-// sample 태그는 Android 4.0 이상 환경부터 지원합니다.
-// sample 태그는 Ridibooks for Android v7.1 이상 환경부터 지원합니다.
-// sapmle 태그는 Android n/a 환경부터 지원합니다. (n/a = not available = 모든 버전에서 지원 안함)
-// sample 태그는 iOS 7.0 이상, Android 4.0 이상 환경부터 지원합니다.
-// sample 태그는 Ridibooks for Android v7.1 이상, Ridibooks for iOS v6.31 이상 환경부터 지원합니다.
+// example 태그는 Android 4.0 이상 환경부터 지원합니다.
+// example 태그는 Ridibooks for Android v7.1 이상 환경부터 지원합니다.
+// example 태그는 Android n/a 환경부터 지원합니다. (n/a = not available = 모든 버전에서 지원 안함)
+// example 태그는 iOS 7.0 이상, Android 4.0 이상 환경부터 지원합니다.
+// example 태그는 Ridibooks for Android v7.1 이상, Ridibooks for iOS v6.31 이상 환경부터 지원합니다.
   },
   {
     "id": "HTML-301",
@@ -223,5 +217,176 @@
     "message": "다단(column) 스타일 속성을 사용하고 있습니다.",
     "description": "화면 크기에 따라 페이지가 잘려보일 수 있습니다.",
     "suggestion": "육안으로 확인 후 해당 스타일 속성을 지우거나 유지해주세요."
+  },
+// epubcheck 관련
+  {
+    "id": "ACC-004",
+    "level": "경고",
+    "message": "%s",
+// 'a' 태그는 접근성을 위해 텍스트를 감싸야합니다.
+    "description": "텍스트가 없어서 사용자가 링크를 터치할 수 없습니다."
+  },
+  {
+    "id": "ACC-010",
+    "level": "경고",
+    "message": "%s",
+// 제목에는 접근성을 위해 'blockquote' 또는 'figure' 태그를 사용하지 않아야합니다.
+    "description": "듣기 기능에서 제목을 생략하고 바로 본문을 읽어서 어색할 수 있습니다."
+  },
+  {
+    "id": "ACC-012",
+    "level": "경고",
+    "message": "%s",
+// 표에는 접근성을 위해 표 제목을 나타내는 'caption' 태그를 사용해야합니다.
+    "suggestion": "듣기 기능으로 표 제목을 읽게하고 싶다면 표에 caption 태그를 넣어주세요."
+  },
+  {
+    "id": "ACC-013",
+    "level": "경고",
+    "message": "%s",
+// 콘텐츠 파일에 하나 이상의 인라인 스타일이 존재합니다.
+    "description": "뷰어에서 추가한 스타일과 충돌하여 의도한 대로 보이지 않을 수 있습니다.",
+    "suggestion": "인라인 스타일을 CSS로 교체해주세요."
+  },
+  {
+    "id": "ACC-014",
+    "level": "경고",
+    "message": "%s",
+// font-size 속성이 상대값이 아닙니다.
+    "description": "Ridibooks for Android에서 뷰어 폰트 크기 설정이 무시될 수 있습니다.",
+    "suggestion": "단위를 % 또는 em으로 바꾸거나, 키워드(larger, smaller, normal, inherit)를 사용해주세요."
+  },
+  {
+    "id": "ACC-015",
+    "level": "경고",
+    "message": "%s",
+// line-height 속성이 상대값이 아닙니다.
+    "description": "Ridibooks for Android에서 뷰어 줄 간격 설정이 무시될 수 있습니다.",
+    "suggestion": "단위를 % 또는 em으로 바꾸거나, 숫자 또는 키워드(normal, inherit)를 사용해주세요."
+  },
+  {
+    "id": "ACC-016",
+    "level": "경고",
+    "message": "%s",
+// font-size 속성은 상대값을 사용해야합니다.
+    "description": "Ridibooks for Android에서 뷰어 폰트 크기 설정이 무시될 수 있습니다.",
+    "suggestion": "단위를 % 또는 em으로 바꾸거나, 키워드(larger, smaller, normal, inherit)를 사용해주세요."
+  },
+  {
+    "id": "ACC-017",
+    "level": "경고",
+    "message": "%s",
+// line-height 속성은 상대값을 사용해야합니다.
+    "description": "Ridibooks for Android에서 뷰어 줄 간격 설정이 무시될 수 있습니다.",
+    "suggestion": "단위를 % 또는 em으로 바꾸거나, 숫자 또는 키워드(normal, inherit)를 사용해주세요."
+  },
+  {
+    "id": "CSS-001",
+    "level": "경고",
+    "message": "%s"
+// example 속성은 ePub CSS에서 사용할 수 없습니다.
+// TODO: 어떤 속성이 여기에 속하는지 확인해야함
+  },
+  {
+    "id": "CSS-002",
+    "level": "경고",
+    "message": "%s",
+// Empty 또는 NULL 값을 사용하고 있습니다.
+    "description": "값이 없어서 뷰어에서 아무런 효력이 없습니다.",
+    "suggestion": "해당 스타일 속성을 지우거나 유효한 값을 넣어주세요."
+  },
+  {
+    "id": "CSS-003",
+    "level": "심각",
+    "message": "%s",
+// UTF-8 또는 UTF-16 인코딩에서 지원하지 않는 문자를 사용하고 있습니다. (지원하지 않는 문자 표기)
+    "description": "뷰어에서 해당 CSS 파일을 사용할 수 없습니다."
+  },
+  {
+    "id": "CSS-004",
+    "level": "심각",
+    "message": "%s",
+// UTF-8 또는 UTF-16 인코딩에서 지원하지 않는 문자를 사용하고 있습니다. (지원하지 않는 문자 표기 BOM)
+    "description": "뷰어에서 해당 CSS 파일을 사용할 수 없습니다."
+  },
+  {
+    "id": "CSS-005",
+    "level": "경고",
+    "message": "%s",
+// 충돌되는 속성을 발견했습니다. (충돌되는 속성명 표기)
+    "description": "속성이 덮어쓰기가 되어 의도한 대로 보이지 않을 수 있습니다."
+  },
+  {
+    "id": "CSS-006",
+    "level": "오류",
+    "message": "%s"
+// 'position:fixed'는 ePub에서 사용할 수 없습니다.
+  },
+  {
+    "id": "CSS-007",
+    "level": "경고",
+    "message": "%s",
+// Font-face의 '폰트 이름 표기'(은)는 비표준 폰트 '폰트 이름 표기'(을)를 참조하고 있습니다.
+    "description": "의도한 폰트가 아닌 다른 폰트로 보일 수 있습니다."
+  },
+  {
+    "id": "CSS-008",
+    "level": "오류",
+    "message": "%s",
+// CSS 파일을 파싱하는 중에 오류가 발생했습니다. ('오류 상세 표기')
+    "description": "뷰어에서 해당 CSS 파일을 사용할 수 없습니다."
+  },
+  {
+    "id": "CSS-009",
+    "level": "오류",
+    "message": "%s",
+// 'Columns', 'Transforms', 'Transitions', 'box-sizing', 'KeyFrames'을 사용하면 페이지 계산에 문제가 생길 수 있습니다.
+    "description": "화면 크기에 따라 페이지가 잘려보이거나 잘못 계산될 수 있습니다.",
+    "suggestion": "육안으로 확인 후 해당 스타일 속성을 지우거나 유지해주세요."
+  },
+  {
+    "id": "CSS-010",
+    "level": "경고",
+    "message": "%s"
+// 비표준 스타일 시트를 사용하고 있습니다.
+// TODO: 비표준 스타일이 뭔지 확인해야함
+  },
+  {
+    "id": "CSS-013",
+    "level": "경고",
+    "message": "%s",
+// '!Important' 키워드를 사용하고 있습니다.
+    "description": "뷰어에서 추가한 스타일과 충돌하여 의도한 대로 보이지 않을 수 있습니다."
+  },
+  {
+    "id": "CSS-016",
+    "level": "경고",
+    "message": "%s"
+// 대체 스타일시트가 기본 스타일 시트보다 우선시 되고 있습니다.
+// TODO: 뭔 차이인지 확인해야함
+  },
+  {
+    "id": "CSS-019",
+    "level": "경고",
+    "message": "%s",
+// font-face에 속성이 아무것도 없습니다.
+    "description": "값이 없어서 뷰어에서 아무런 효력이 없습니다.",
+    "suggestion": "font-face를 지우거나 유효한 값을 넣어주세요."
+  },
+  {
+    "id": "CSS-020",
+    "level": "경고",
+    "message": "%s",
+// 유효하지 않은 폰트 사이즈를 사용하고 있습니다. (사이즈 표기)
+    "description": "의도한 크기로 보이지 않을 수 있습니다.",
+    "suggestion": "단위를 % 또는 em으로 바꾸거나, 키워드(larger, smaller, normal, inherit)를 사용해주세요."
+  },
+  {
+    "id": "CSS-022",
+    "level": "경고",
+    "message": "%s",
+// 글로벌 마진을 사용하고 있습니다.
+    "description": "뷰어의 기본 여백과 중첩되어 여백이 넓어 보일 수 있습니다.",
+    "suggestion": "육안으로 확인 후 값을 조절해주세요."
   }
 ]

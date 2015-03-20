@@ -22,12 +22,20 @@ var unzipPath = path.join(temp, uuid.v1());
 
 var startTime = new Date();
 
-var exit = function(/*Number*/code) {
+var exit = function(/*Number*/code, /*Object*/e) {
+  if (e !== undefined) {
+    if (e.code === undefined) {
+      console.log(e);
+    } else {
+      report.add(e.code, e.location, e.msgArgs, e.descArgs, e.sugArgs);
+    }
+  }
+
   try {
     rimraf.sync(unzipPath);
   } catch(e) {
     report.add('APP-201'/*임시 폴더 삭제 오류*/, null, [unzipPath]);
-    debug(e);
+    console.log(e);
   }
 
   var finishTime = new Date();
@@ -70,7 +78,7 @@ try {
   zip.extractAllTo(unzipPath, true);
 } catch(e) {
   report.add('APP-403'/*압축해제 오류*/, null, [file]);
-  exit(3);
+  exit(3, e);
 }
 
 debug('ePub uncompressed');
@@ -79,8 +87,7 @@ try {
   var epub = new Epub(file, unzipPath);
   epub.validation();
 } catch(e) {
-  report.add(e.code, e.location, e.msgArgs, e.descArgs, e.sugArgs);
-  exit(4);
+  exit(4, e);
 }
 
 debug('ePub validation');
@@ -89,8 +96,7 @@ try {
   var files = new File(unzipPath);
   files.validation();
 } catch(e) {
-  report.add(e.code, e.location, e.msgArgs, e.descArgs, e.sugArgs);
-  exit(5);
+  exit(5, e);
 }
 
 debug('files validation in ePub');
