@@ -35,13 +35,15 @@ release: pre-build build post-build
 install:
 	$(NPM) install
 
-uninstall:
+uninstall: temp-clean
 	$(RM) node_modules
+
+clean: temp-clean release-clean os-generated-file-clean
+
+temp-clean:
 	$(RM) epub-validator-temp
 	$(RM) temp
 	$(RM) tmp
-
-clean: release-clean os-generated-file-clean
 
 release-clean:
 ifeq ($(OS),Windows_NT)
