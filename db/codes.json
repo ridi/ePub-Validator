@@ -132,13 +132,13 @@
   {
     "id": "IMG-301",
     "level": "오류",
-    "message": "표지 이미지가 %dx%d보다 작습니다.",
-    "description": "표지 이미지의 권장 크기 %dx%d로 맞춰주세요."
+    "message": "표지 이미지가 %d×%d보다 작습니다.",
+    "suggestion": "표지 이미지의 권장 크기 %d×%d로 맞춰주세요."
   },
   {
     "id": "IMG-302",
     "level": "오류",
-    "message": "본문 이미지가 %dx%d보다 큽니다."
+    "message": "본문 이미지가 %d×%d보다 큽니다."
   },
   {
     "id": "IMG-303",
@@ -153,6 +153,17 @@
     "message": "CMYK Color model을 사용하는 이미지입니다.",
     "description": "Android 기기에서 출력할 수 없습니다.",
     "suggestion": "RGB Color model로 수정해주세요."
+  },
+  {
+    "id": "IMG-305",
+    "level": "오류",
+    "message": "표지 이미지가 %d픽셀(%d×%d)보다 작습니다.",
+    "suggestion": "표지 이미지의 권장 크기 %d픽셀(%d×%d)로 맞춰주세요."
+  },
+  {
+    "id": "IMG-306",
+    "level": "오류",
+    "message": "본문 이미지가 %d픽셀(%d×%d)보다 큽니다."
   },
 // 본뮨 관련
   {
@@ -340,7 +351,7 @@
     "level": "오류",
     "message": "%s",
 // CSS 파일을 파싱하는 중에 오류가 발생했습니다. ('오류 상세 표기')
-    "description": "뷰어에서 해당 CSS 파일을 사용할 수 없습니다."
+    "description": "뷰어에서 해당 CSS 파일을 사용할 수 없거나 의도한 데로 보이지 않을 수 있습니다."
   },
   {
     "id": "CSS-009",
