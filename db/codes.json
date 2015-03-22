@@ -301,8 +301,7 @@
     "id": "CSS-001",
     "level": "경고",
     "message": "%s"
-// example 속성은 ePub CSS에서 사용할 수 없습니다.
-// TODO: 어떤 속성이 여기에 속하는지 확인해야함
+// 'direction' or 'unicode-bidi' 속성은 ePub CSS에서 사용할 수 없습니다.
   },
   {
     "id": "CSS-002",
@@ -343,8 +342,9 @@
     "id": "CSS-007",
     "level": "경고",
     "message": "%s",
-// Font-face의 '폰트 이름 표기'(은)는 비표준 폰트 '폰트 이름 표기'(을)를 참조하고 있습니다.
-    "description": "의도한 폰트가 아닌 다른 폰트로 보일 수 있습니다."
+// Font-face의 'OEBPS/fonts/KoPubBatangLight.ttf'(은)는 비표준 폰트 'application/octet-stream'(을)를 참조하고 있습니다.
+    "description": "뷰어에서 해당 폰트를 인식하지 못할 수 있습니다.",
+    "suggestion": "폰트 파일에 적합한 minetype을 입력해주세요."
   },
   {
     "id": "CSS-008",
@@ -364,9 +364,10 @@
   {
     "id": "CSS-010",
     "level": "경고",
-    "message": "%s"
+    "message": "%s",
 // 비표준 스타일 시트를 사용하고 있습니다.
-// TODO: 비표준 스타일이 뭔지 확인해야함
+    "description": "뷰어에서 해당 CSS를 인식할 수 없습니다.",
+    "suggestion": "minetype이 'text/css'인지 확인해주세요."
   },
   {
     "id": "CSS-013",
