@@ -24,4 +24,5 @@ tmp/*
 
 # Distribution file  #
 ######################
+*.jxp
 release/*

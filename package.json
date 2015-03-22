@@ -41,11 +41,12 @@
     "README.md",
     "package.json",
     "epub-validator.js",
-    "epub-validator.jxp",
-    "makefile",
+    "Makefile",
     "MessageBundle_kr.properties",
     "lib/*.js",
     "config/*",
     "db/*"
-  ]
+  ],
+  "company": "© RIDI Corporation",
+  "jxp": "epub-validator.jxp"
 }
