@@ -65,7 +65,7 @@
   {
     "id": "APP-403",
     "level": "심각",
-    "message": "검사할 대상 %s(을)를 압축해제할 수 없습니다.",
+    "message": "검사할 대상 %s(을)를 압축 해제할 수 없습니다.",
     "description": "검사할 대상이 epub 파일인지 확인해주세요."
   },
 // epub 관련
@@ -87,7 +87,7 @@
   {
     "id": "EPUB-201",
     "level": "경고",
-    "message": "ISBN 정보가 누락되어 있습니다."
+    "message": "ISBN 정보가 빠져 있습니다."
   },
   {
     "id": "EPUB-202",
@@ -150,9 +150,9 @@
   {
     "id": "IMG-304",
     "level": "오류",
-    "message": "CMYK Color model을 사용하는 이미지입니다.",
+    "message": "CMYK 형식을 사용하는 이미지입니다.",
     "description": "Android 기기에서 출력할 수 없습니다.",
-    "suggestion": "RGB Color model로 수정해주세요."
+    "suggestion": "RGB 형식으로 수정해주세요."
   },
   {
     "id": "IMG-305",
@@ -181,14 +181,14 @@
     "id": "HTML-301",
     "level": "오류",
     "message": "HTML 파일의 크기가 %dKB보다 큽니다.",
-    "description": "뷰어에서 책을 여는데 오랜 시간이 걸립니다.",
+    "description": "뷰어에서 책을 여는 데 오랜 시간이 걸립니다.",
     "suggestion": "HTML의 권장 크기 %dKB 이하로 맞춰주세요."
   },
   {
     "id": "HTML-302",
     "level": "오류",
     "message": "HTML 태그가 너무 많은 자식 태그를 가지고 있습니다.",
-    "description": "뷰어에서 책을 여는데 오랜 시간이 걸리고, 선택과 형광펜 기능이 느려집니다.",
+    "description": "뷰어에서 책을 여는 데 오랜 시간이 걸리고, 선택과 형광펜 기능이 느려집니다.",
     "suggestion": "여러 부모를 만들어서 자식을 분산시켜주세요."
   },
   {
@@ -207,7 +207,7 @@
   {
     "id": "CSS-201",
     "level": "경고",
-    "message": "word-break: break-all 스타일 속성을 사용하면 각 줄의 끝이 균등 정렬되지 못 합니다."
+    "message": "word-break: break-all 스타일 속성을 사용하면 각 줄의 끝이 균등 정렬되지 못합니다."
   },
   {
     "id": "CSS-202",
@@ -226,8 +226,8 @@
     "id": "CSS-302",
     "level": "오류",
     "message": "다단(column) 스타일 속성을 사용하고 있습니다.",
-    "description": "화면 크기에 따라 페이지가 잘려보일 수 있습니다.",
-    "suggestion": "육안으로 확인 후 해당 스타일 속성을 지우거나 유지해주세요."
+    "description": "화면 크기에 따라 페이지가 잘려 보일 수 있습니다.",
+    "suggestion": "뷰어에서 확인 후 해당 스타일 속성을 지우거나 유지해주세요."
   },
   {
     "id": "CSS-303",
@@ -255,7 +255,7 @@
     "level": "경고",
     "message": "%s",
 // 표에는 접근성을 위해 표 제목을 나타내는 'caption' 태그를 사용해야합니다.
-    "suggestion": "듣기 기능으로 표 제목을 읽게하고 싶다면 표에 caption 태그를 넣어주세요."
+    "suggestion": "듣기 기능으로 표 제목을 읽게 하고 싶다면 표에 caption 태그를 넣어주세요."
   },
   {
     "id": "ACC-013",
@@ -263,7 +263,7 @@
     "message": "%s",
 // 콘텐츠 파일에 하나 이상의 인라인 스타일이 존재합니다.
     "description": "뷰어에서 추가한 스타일과 충돌하여 의도한 대로 보이지 않을 수 있습니다.",
-    "suggestion": "인라인 스타일을 CSS로 교체해주세요."
+    "suggestion": "인라인 스타일을 CSS 파일로 변환해주세요."
   },
   {
     "id": "ACC-014",
@@ -339,14 +339,6 @@
 // 'position:fixed'는 ePub에서 사용할 수 없습니다.
   },
   {
-    "id": "CSS-007",
-    "level": "경고",
-    "message": "%s",
-// Font-face의 'OEBPS/fonts/KoPubBatangLight.ttf'(은)는 비표준 폰트 'application/octet-stream'(을)를 참조하고 있습니다.
-    "description": "뷰어에서 해당 폰트를 인식하지 못할 수 있습니다.",
-    "suggestion": "폰트 파일에 적합한 minetype을 입력해주세요."
-  },
-  {
     "id": "CSS-008",
     "level": "오류",
     "message": "%s",
@@ -358,22 +350,14 @@
     "level": "오류",
     "message": "%s",
 // 'Columns', 'Transforms', 'Transitions', 'box-sizing', 'KeyFrames'을 사용하면 페이지 계산에 문제가 생길 수 있습니다.
-    "description": "화면 크기에 따라 페이지가 잘려보이거나 잘못 계산될 수 있습니다.",
-    "suggestion": "육안으로 확인 후 해당 스타일 속성을 지우거나 유지해주세요."
-  },
-  {
-    "id": "CSS-010",
-    "level": "경고",
-    "message": "%s",
-// 비표준 스타일 시트를 사용하고 있습니다.
-    "description": "뷰어에서 해당 CSS를 인식할 수 없습니다.",
-    "suggestion": "minetype이 'text/css'인지 확인해주세요."
+    "description": "화면 크기에 따라 페이지가 잘려 보이거나 잘못 계산될 수 있습니다.",
+    "suggestion": "뷰어에서 확인 후 해당 스타일 속성을 지우거나 유지해주세요."
   },
   {
     "id": "CSS-013",
     "level": "경고",
     "message": "%s",
-// '!Important' 키워드를 사용하고 있습니다.
+// '!important' 속성을 사용하고 있습니다.
     "description": "뷰어에서 추가한 스타일과 충돌하여 의도한 대로 보이지 않을 수 있습니다."
   },
   {
@@ -389,7 +373,7 @@
     "message": "%s",
 // font-face에 속성이 아무것도 없습니다.
     "description": "값이 없어서 뷰어에서 아무런 효력이 없습니다.",
-    "suggestion": "font-face를 지우거나 유효한 값을 넣어주세요."
+    "suggestion": "font-face를 지우거나 속성을 추가해주세요."
   },
   {
     "id": "CSS-020",
@@ -405,13 +389,6 @@
     "message": "%s",
 // 글로벌 마진을 사용하고 있습니다.
     "description": "뷰어의 기본 여백과 중첩되어 여백이 넓어 보일 수 있습니다.",
-    "suggestion": "육안으로 확인 후 값을 조절해주세요."
-  },
-  {
-    "id": "NAV-001",
-    "level": "경고",
-    "message": "%s",
-// 이 목차 파일은 ePub 2.0을 지원하지 않습니다.
-    "suggestion": "앱팀의 안다빈 책임에게 문의하세요."
+    "suggestion": "뷰어에서 확인 후 값을 조절해주세요."
   }
 ]
