@@ -1,6 +1,6 @@
 {
   "name": "ePub-Validator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ePub validator for Ridibooks CP site",
   "author": "Ridibooks App Team <appdev.team@ridicorp.com>",
   "contributors": [
