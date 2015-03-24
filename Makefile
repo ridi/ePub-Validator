@@ -41,9 +41,18 @@ uninstall: temp-clean
 clean: temp-clean release-clean os-generated-file-clean
 
 temp-clean:
+ifeq ($(wildcard epub-validator-temp),)
+else
 	$(RM) epub-validator-temp
+endif
+ifeq ($(wildcard temp),)
+else
 	$(RM) temp
+endif
+ifeq ($(wildcard tmp),)
+else
 	$(RM) tmp
+endif
 
 release-clean:
 ifeq ($(OS),Windows_NT)
