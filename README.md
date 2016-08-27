@@ -1,7 +1,6 @@
 
 # ePub validator for Ridibooks CP site
 
----
 
 ## 요약
 
@@ -9,7 +8,6 @@
 - 개발 언어와 환경: js, node.js  
 - 개발 기간: 2015.01.20 ~ 2015.03.23 (v0.0.1 테스트 버전)
 
----
 
 ## 개발환경 설정
 
@@ -19,7 +17,7 @@
 	`import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')`  
 	- Sublime Text 2 재시작  
 	- cmd + shift + P  
-	- 입력창에 'install' 입력  
+	-- 입력창에 'install' 입력  
 	- 'Package Control: Install Package' 선택(실행)  
 
 * __Sublime Text 2, JS & NodeJS Snippets Package 설치하기__  
@@ -47,7 +45,6 @@
 	- Sublime Text 2 > Tools > Build System > nodejs 선택  
 	- cmd + B  
 
----
 
 ## 디버깅 모드
 
@@ -67,13 +64,11 @@
 	app files validation in ePub +0ms  
 	app finish (0) +13ms  
 
----
 
 ## 배포 버전 생성
 - epub-validator 루트 디렉토리로 이동 후   
 `davin$ make release`
 
----
 
 ## 업데이트 이력
 
@@ -88,7 +83,6 @@
 #### 0.0.1 (2015.03.23)
 - 테스트 버전 배포
 
----
 
 ## 검사 항목(Ridi)
 | 분류 | 심각성 | 내용 | 개발현황 |
