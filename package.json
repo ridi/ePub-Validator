@@ -2,15 +2,14 @@
   "name": "ePub-Validator",
   "version": "0.0.2",
   "description": "ePub validator for Ridibooks CP site",
-  "author": "Ridibooks App Team <appdev.team@ridicorp.com>",
+  "author": "Ridibooks Viewer Team <viewer.team@ridi.com>",
   "contributors": [
-    "Davin Ahn <davin.ahn@ridicorp.com>",
-    "Daeyeol Ryu <dy.ryu@ridicorp.com>"
+    "Davin Ahn <davin.ahn@ridi.com>",
+    "Daeyeol Ryu <dy.ryu@ridi.com>"
   ],
-  "private": true,
   "repository": {
     "type": "git",
-    "url": "http://gitlab.ridi.kr:8888/app/epub-validator.git"
+    "url": "https://github.com/ridibooks/ePub-Validator"
   },
   "main": "epub-validator.js",
   "engines": {
