@@ -1,5 +1,5 @@
 {
-  "name": "ePub-Validator",
+  "name": "epub-validator",
   "version": "0.0.2",
   "description": "ePub validator for Ridibooks CP site",
   "author": "Ridibooks Viewer Team <viewer.team@ridi.com>",
