@@ -3,13 +3,6 @@
 [![npm](https://img.shields.io/npm/v/epub-validator.svg)](https://www.npmjs.com/package/epub-validator)
 
 
-## 요약
-
-- 개발 진행: 앱팀(안다빈, 유대열)  
-- 개발 언어와 환경: js, node.js  
-- 개발 기간: 2015.01.20 ~ 2015.03.23 (v0.0.1 테스트 버전)
-
-
 ## 개발환경 설정
 
 * __Sublime Text 2, Package Control 활성화하기__  
