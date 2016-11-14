@@ -1,5 +1,6 @@
 
 # ePub validator for Ridibooks CP site
+[![npm](https://img.shields.io/npm/v/epub-validator.svg)](https://www.npmjs.com/package/epub-validator)
 
 
 ## 요약
