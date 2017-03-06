@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "ePub validator for Ridibooks CP site",
   "author": "Ridibooks Viewer Team <viewer.team@ridi.com>",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "contributors": [
     "Davin Ahn <davin.ahn@ridi.com>",
     "Daeyeol Ryu <dy.ryu@ridi.com>"
