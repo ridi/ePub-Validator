@@ -1,5 +1,7 @@
 
 # ePub validator for Ridibooks CP site
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/ridibooks/ePub-Validator.svg)](https://greenkeeper.io/)
 [![npm](https://img.shields.io/npm/v/epub-validator.svg)](https://www.npmjs.com/package/epub-validator)
 
 
