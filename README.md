@@ -8,7 +8,9 @@
 ### **Sublime Text 2, Package Control 활성화하기**
 1. `View > Show Console`
 2. 콘솔창에 아래 명령 복붙 후 실행.
-`import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')`  
+```
+import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
+```
 3. Sublime Text 2 재시작.
 4. `cmd + shift + P`
 5. 입력창에 `install` 입력.
@@ -36,7 +38,9 @@
 }
 ```
 3. 아래 경로로 저장.
-`'/Users/{사용자 이름}/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/nodejs.sublime-build'`  
+```
+/Users/{사용자 이름}/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/nodejs.sublime-build
+```  
 4. 빌드할 main.js를 Sublime Text 2로 열기 또는 선택.
 5. `Sublime Text 2 > Tools > Build System > nodejs` 선택.
 6. `cmd + B`
@@ -46,9 +50,13 @@
 
 - 디버깅 모드는 프로그램의 흐름을 한눈에 파악하고 각 과정의 실행시간을 출력해주는 것을 의미한다.
 - 디버깅 모드로 실행시키기 위해서는 아래 처럼 커맨드를 사용할 때.
-`$ node epub-validator.js test.epub`
+```
+$ node epub-validator.js test.epub
+```
 - 커맨드 앞에 'DEBUG=**keyword**'를 붙여주면 된다.
-`$ DEBUG=* node epub-validator.js test.epub`
+```
+$ DEBUG=* node epub-validator.js test.epub
+```
 - **keyword**에는 **app**, **epub**, **file**, **html**, **css**, **image**가 있으며 전체를 쓰고 싶을 때는 \*를 사용한다.
 - 예를 들어 **app**을 keyword로 사용하면 아래와 같이 출력된다.
 ```
@@ -64,7 +72,9 @@ app finish (0) +13ms
 
 ## 배포 버전 생성
 - epub-validator 루트 디렉토리로 이동 후 다음 커맨드를 실행.
-`$ make release`
+```
+$ make release
+```
 
 
 ## 업데이트 이력
