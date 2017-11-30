@@ -50,8 +50,10 @@ var exit = function(/*Number*/code, /*Object*/e) {
 
 // 배포용으로 실행되면 첫 번째 인자에 'node'가 없어서 cmd가 비정상으로 동작하게 된다
 var argv = ps.argv;
+var isRelease = false;
 if (argv.length > 0 && argv[0] !== 'node') {
   argv.splice(0, 0, 'node');
+  isRelease = true;
 }
 
 // TODO: 추후 옵션을 추가하거나 사용법을 구체적으로 추가해보자
@@ -61,7 +63,7 @@ cmd.version(pkg.name + ' v' + pkg.version)
 
 debug('init');
 
-var file = cmd.args[0];
+var file = cmd.args[isRelease ? 1 : 0];
 if (file === undefined) {
   report.add('APP-401'/*파라메터 부족*/);
   exit(1);
