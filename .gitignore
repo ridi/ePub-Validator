@@ -8,6 +8,10 @@
 ehthumbs.db
 Thumbs.db
 
+# IDE Config         #
+######################
+.idea
+
 # Node JS Modules    #
 ######################
 node_modules/*
