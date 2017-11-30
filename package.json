@@ -1,6 +1,6 @@
 {
   "name": "epub-validator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "ePub validator for Ridibooks CP site",
   "author": "Ridibooks Viewer Team <viewer.team@ridi.com>",
   "license": "MIT",
